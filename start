@@ -1,0 +1,59 @@
+#!/bin/env ruby
+
+require "yaml"
+
+class Executor
+  @@executors = {}
+
+  @executor_script = "/home/addisaden/.executor_script.yaml"
+
+  if File.exist? @executor_script then
+    f = File.open(@executor_script, "r")
+    @@executors = YAML.load(f.read)
+    f.close
+  end
+
+  def self.save(key, obj)
+    @@executors[key] = obj
+    f = File.new(@executor_script, "w")
+    f.write YAML.dump(@@executors)
+    f.close
+  end
+
+  def self.list
+    puts @@executors.keys.sort
+  end
+
+  def self.execute(key)
+    if(element = @@executors[key]) then
+      element.execute
+    else
+      puts "#{ key } doesnt exist."
+    end
+  end
+
+  def initialize(name, command)
+    @name = name
+    @command = command
+    @pwd = Dir.pwd
+
+    Executor.save(@name, self)
+  end
+
+  def execute
+    Dir.chdir @pwd
+    exec(@command)
+  end
+end
+
+if ARGV.length == 1 then
+  if ARGV[0] == "list" then
+    Executor.list
+  else
+    Executor.execute(ARGV[0])
+  end
+elsif ARGV.length > 1 then
+  Executor.new(ARGV[0], ARGV[1..-1].join(" "))
+else
+  puts "You should give it a command"
+end
