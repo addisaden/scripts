@@ -21,7 +21,7 @@ class Executor
   end
 
   def self.list
-    puts @@executors.keys.sort
+    @@executors.keys.sort
   end
 
   def self.execute(key)
@@ -47,13 +47,9 @@ class Executor
 end
 
 if ARGV.length == 1 then
-  if ARGV[0] == "list" then
-    Executor.list
-  else
-    Executor.execute(ARGV[0])
-  end
+  Executor.execute(ARGV[0])
 elsif ARGV.length > 1 then
   Executor.new(ARGV[0], ARGV[1..-1].join(" "))
 else
-  puts "You should give it a command"
+  puts "You should give it a command: #{ Executor.list.join(', ') }"
 end
