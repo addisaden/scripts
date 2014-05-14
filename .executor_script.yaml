@@ -1,0 +1,41 @@
+---
+darwinia: !ruby/object:Executor
+  name: darwinia
+  command: "./darwinia.bin.x86_64"
+  pwd: "/home/addisaden/.local/share/Steam/SteamApps/common/Darwinia"
+defcon: !ruby/object:Executor
+  name: defcon
+  command: "./defcon.bin.x86"
+  pwd: "/home/addisaden/.local/share/Steam/SteamApps/common/Defcon"
+democracy: !ruby/object:Executor
+  name: democracy
+  command: "./Democracy3.bin.x86"
+  pwd: "/home/addisaden/.local/share/Steam/SteamApps/common/Democracy 3"
+dredmor: !ruby/object:Executor
+  name: dredmor
+  command: "./Dredmor-amd64"
+  pwd: "/home/addisaden/.local/share/Steam/SteamApps/common/Dungeons of Dredmor"
+ftl: !ruby/object:Executor
+  name: ftl
+  command: "./FTL"
+  pwd: "/home/addisaden/.local/share/Steam/SteamApps/common/FTL Faster Than Light"
+gamedev: !ruby/object:Executor
+  name: gamedev
+  command: "./gamedevtycoon64-bin"
+  pwd: "/home/addisaden/.local/share/Steam/SteamApps/common/Game Dev Tycoon"
+multiwinia: !ruby/object:Executor
+  name: multiwinia
+  command: "./multiwinia.bin.x86"
+  pwd: "/home/addisaden/.local/share/Steam/SteamApps/common/Multiwinia"
+starbound: !ruby/object:Executor
+  name: starbound
+  command: "./starbound"
+  pwd: "/home/addisaden/.local/share/Steam/SteamApps/common/Starbound/linux64"
+meatboy: !ruby/object:Executor
+  name: meatboy
+  command: "./SuperMeatBoy"
+  pwd: "/home/addisaden/.local/share/Steam/SteamApps/common/Super Meat Boy"
+uplink: !ruby/object:Executor
+  name: uplink
+  command: "./uplink.bin.x86_64"
+  pwd: "/home/addisaden/.local/share/Steam/SteamApps/common/Uplink"
