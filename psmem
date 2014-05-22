@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ps -A k +%mem --format="%cpu %mem user pid fname"
